@@ -9,11 +9,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="arr in data" :key="arr">
+      <tr
+        @click="Read(index)"
+        class="textline textBox"
+        v-for="(arr, index) in data"
+        :key="index"
+      >
         <th scope="row">{{ arr.id }}</th>
         <td>{{ arr.name }}</td>
         <td>{{ arr.title }}</td>
-        <td>{{ arr.text }}</td>
+        <div class="textBox">{{ arr.text }}</div>
       </tr>
     </tbody>
   </table>
@@ -27,6 +32,11 @@ export default {
     return {
       data: data
     };
+  },
+  methods: {
+    Read(index) {
+      this.$router.push({ name: "read", id: index });
+    }
   }
 };
 </script>
@@ -34,5 +44,21 @@ export default {
 <style scoped>
 .table {
   width: 800px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  -webkit-line-clamp: 1;
+  word-wrap: break-word;
+}
+
+.textline:hover {
+  color: rgba(25, 0, 255, 0.404);
+  transition: 0.5s;
+}
+.textBox {
+  width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 </style>

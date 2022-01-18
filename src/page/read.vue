@@ -1,14 +1,16 @@
 <template>
   <div>
-    <h1>{{ hansom }}</h1>
-    <h1></h1>
-    <!-- <writing :title="dd" :article="섹스보지시발"></writing> -->
+    <div class="container">
+      <div class="Box">
+        <h2 class="title">{{ title }}</h2>
+        <div class="article">{{ text }}</div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import data from "../data";
-import writing from "../components/writing.vue";
 
 export default {
   name: "read",
@@ -26,10 +28,6 @@ export default {
     this.title = data[this.index].title;
     this.text = data[this.index].text;
     console.log(this.title);
-  },
-
-  components: {
-    writing
   }
 };
 </script>
@@ -59,5 +57,7 @@ export default {
 
 .article {
   word-break: break-all;
+  overflow: hidden;
+  padding: 12px;
 }
 </style>
