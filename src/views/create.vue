@@ -28,9 +28,9 @@ export default {
   name: "create",
   data() {
     return {
-      title: "",
-      article: "",
-      name: ""
+      title: null,
+      article: null,
+      name: null
     };
   },
   methods: {

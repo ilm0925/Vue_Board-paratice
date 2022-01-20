@@ -6,7 +6,7 @@
         <div class="article">{{ text }}</div>
       </div>
 
-      <button class="mt-3 btn btn-dark">Edit</button>
+      <button @click="Edit(index)" class="mt-3 btn btn-dark">Edit</button>
     </div>
   </div>
 </template>
@@ -18,13 +18,16 @@ export default {
   name: "read",
   data() {
     return {
-      hansom: "안녕..",
       index: null,
       title: null,
       text: null
     };
   },
-
+  methods: {
+    Edit(id) {
+      this.$router.push({ path: `/edit/${id}` });
+    }
+  },
   mounted() {
     this.index = this.$route.params.id;
     this.title = data[this.index].title;
