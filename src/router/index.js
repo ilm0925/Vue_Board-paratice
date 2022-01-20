@@ -1,7 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-import main from "@/page/main";
-import read from "@/page/read";
+import main from "@/views/main";
+import read from "@/views/read";
+import create from "@/views/create";
 Vue.use(Router);
 
 export default new Router({
@@ -15,6 +16,16 @@ export default new Router({
       path: "/read/:id",
       name: "read",
       component: read
+    },
+    {
+      path: "/create",
+      name: "create",
+      component: create
+    },
+    {
+      path: "/edit:id",
+      name: "Edit",
+      component: create
     }
   ]
 });

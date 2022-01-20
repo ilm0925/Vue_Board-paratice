@@ -4,7 +4,7 @@
       <h1 class="mb-4">Home</h1>
       <articleList class="article" />
 
-      <button class="btn-primary btn mt-3">글 생성</button>
+      <button @click="create()" class="btn-primary btn mt-3">글 생성</button>
     </div>
   </div>
 </template>
@@ -14,6 +14,11 @@ import articleList from "../components/articleList.vue";
 
 export default {
   name: "main",
+  methods: {
+    create() {
+      this.$router.push({ path: "/create" });
+    }
+  },
   components: {
     articleList
   }

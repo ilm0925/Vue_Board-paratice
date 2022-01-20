@@ -35,7 +35,8 @@ export default {
   },
   methods: {
     Read(index) {
-      this.$router.push({ name: "read", id: index });
+      console.log(index);
+      this.$router.push({ path: `/read/${index}` });
     }
   }
 };
